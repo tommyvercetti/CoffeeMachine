@@ -55,12 +55,12 @@ class ViewController: UIViewController {
   }
   
   @IBAction func makeCapuchinoButton() {
-    titleLabel.text = firstMachine.makeCapuchino()
+    titleLabel.text = firstMachine.initRecipe(drink: Drinks.capuchinoDrink())
   }
-  
-  @IBAction func makeEspressoButton() {
-    titleLabel.text = firstMachine.makeEspresso()
-  }
+
+//  @IBAction func makeEspressoButton() {
+//    titleLabel.text = firstMachine.initRecipe(drink: Drinks.capuchinoDrink())
+//  }
 }
 
 

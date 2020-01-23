@@ -103,46 +103,71 @@ class CofeMachine: NSObject {
   
   //products
   
-  func initialRecipe(recipeNumber: Int) -> String{
-    var labelText: String = ""
-    if isTrashBinIsEmpty(trashTank: trashBinLevel) {
-      if isEnoughIngridientsInTanks(waterTank: waterTankLevel, milkTank: milkTankLevel, beansTank: beansTankLevel) {
-        
-        switch recipeNumber {
-        case 1:
-          //Capuchino
-          waterTankLevel -= waterPortion * 3
-          beansTankLevel -= beansPortion * 2
-          milkTankLevel -= milkPortion * 1
-          trashBinLevel += beansPortion * 2
-          labelText = "Capuchino ready \u{2615}"
-        case 2:
-          //Espresso
-          waterTankLevel -= waterPortion * 1
-          beansTankLevel -= beansPortion * 2
-          milkTankLevel -= milkPortion * 0
-          trashBinLevel += beansPortion * 2
-          labelText = "Espresso ready \u{2615}"
-        default:
-          print("ololo")
-        }
-      }
-      else {
-        labelText = "not enought ingridients"
-      }
-    }  else {
-      labelText = "Clean trash bin"
-    }
-    return labelText
-  }
+
   
-  func makeCapuchino() -> String {
-    initialRecipe(recipeNumber: 1)
-  }
+  func initRecipe(drink: Drinks) -> String {
+     var labelText: String = ""
+     if isTrashBinIsEmpty(trashTank: trashBinLevel) {
+       if isEnoughIngridientsInTanks(waterTank: waterTankLevel, milkTank: milkTankLevel, beansTank: beansTankLevel) {
+         waterTankLevel -= drink.water
+         beansTankLevel -= drink.beans
+         milkTankLevel -= drink.milk
+         trashBinLevel += drink.trash
+         labelText = "\(drink.name) is ready \u{2615}"
+         return labelText
+       }else {
+         labelText = "not enought ingridients"
+       }
+     }  else {
+       labelText = "Clean trash bin"
+     }
+     return labelText
+   }
+
   
-  func makeEspresso() -> String {
-    initialRecipe(recipeNumber: 2)
-  }
+  
+  
+  
+//  func initialRecipe(recipeNumber: Int) -> String{
+//    var labelText: String = ""
+//    if isTrashBinIsEmpty(trashTank: trashBinLevel) {
+//      if isEnoughIngridientsInTanks(waterTank: waterTankLevel, milkTank: milkTankLevel, beansTank: beansTankLevel) {
+//
+////        switch recipeNumber {
+////        case 1:
+////          //Capuchino
+////          waterTankLevel -= waterPortion * 3
+////          beansTankLevel -= beansPortion * 2
+////          milkTankLevel -= milkPortion * 1
+////          trashBinLevel += beansPortion * 2
+////          labelText = "Capuchino ready \u{2615}"
+////        case 2:
+////          //Espresso
+////          waterTankLevel -= waterPortion * 1
+////          beansTankLevel -= beansPortion * 2
+////          milkTankLevel -= milkPortion * 0
+////          trashBinLevel += beansPortion * 2
+////          labelText = "Espresso ready \u{2615}"
+////        default:
+////          print("ololo")
+////        }
+//      }
+//      else {
+//        labelText = "not enought ingridients"
+//      }
+//    }  else {
+//      labelText = "Clean trash bin"
+//    }
+//    return labelText
+//  }
+//
+//  func makeCapuchino() -> String {
+//    initialRecipe(recipeNumber: 1)
+//  }
+//
+//  func makeEspresso() -> String {
+//    initialRecipe(recipeNumber: 2)
+//  }
   
 }
 
