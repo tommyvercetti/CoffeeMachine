@@ -58,9 +58,9 @@ class ViewController: UIViewController {
     titleLabel.text = firstMachine.initRecipe(drink: Drinks.capuchinoDrink())
   }
 
-//  @IBAction func makeEspressoButton() {
-//    titleLabel.text = firstMachine.initRecipe(drink: Drinks.capuchinoDrink())
-//  }
+  @IBAction func makeEspressoButton() {
+    titleLabel.text = firstMachine.initRecipe(drink: Drinks.espresso())
+  }
 }
 
 

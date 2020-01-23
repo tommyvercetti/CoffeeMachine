@@ -14,8 +14,7 @@ class Drinks: NSObject {
   let beans: Int
   let milk: Int
   let trash: Int
-  //let portion: Int - TBA later
-  
+  //let portion: Int - TBD later
   
   init(name: String, water: Int, beans: Int, milk: Int, trash: Int) {
     self.name = name
@@ -30,7 +29,7 @@ class Drinks: NSObject {
     return Drinks(name: "Capuchino", water: 100, beans: 100, milk: 50, trash: 100)
   }
   
-  func espresso() -> Drinks {
+  static func espresso() -> Drinks {
     return Drinks(name: "Espresso", water: 50, beans: 200, milk: 0, trash: 200)
   }
   

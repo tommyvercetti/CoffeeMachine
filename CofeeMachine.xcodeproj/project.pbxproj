@@ -72,8 +72,8 @@
 		E66DFA5F23CF63F300E5AA23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E611144123C8F22900F0234C /* CofeMachine.swift */,
 				E60A731923D6233A003AE53E /* Drinks.swift */,
+				E611144123C8F22900F0234C /* CofeMachine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
