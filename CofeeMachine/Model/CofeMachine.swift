@@ -56,7 +56,7 @@ class CofeMachine: NSObject {
       waterTankLevel += service.water
       milkTankLevel  += service.milk
       beansTankLevel += service.beans
-      labelText = "product added"
+      labelText = "\(service.name) added"
     } else {
       labelText = "tank is full"
     }

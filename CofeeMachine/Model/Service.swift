@@ -38,4 +38,5 @@ class Service: NSObject {
   static func cleanTrashBin() -> Service {
     return Service(name: "Trash", water: 0, beans: 0, milk: 0, trash: 0)
   }
+  
 }
