@@ -58,7 +58,7 @@ class CofeMachine: NSObject {
       beansTankLevel += service.beans
       labelText = "\(service.name) added"
     } else {
-      labelText = "tank is full"
+      labelText = "\(service.name) tank is full"
     }
     return labelText
   }
