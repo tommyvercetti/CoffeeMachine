@@ -10,16 +10,9 @@ import UIKit
 
 class CofeMachine: NSObject {
   
-  
-  
-  //resources income
-  let waterIncome = 500
-  let milkIncome = 750
-  let beansIncome = 350
-  
   //capacity of tanks
   let waterTankCapasity = 2000
-  let milkTankCapasity = 1000
+  let milkTankCapasity = 1500
   let beansTankCapasity = 2500
   let trashBinCapasity = 2500
   
@@ -29,98 +22,72 @@ class CofeMachine: NSObject {
   var beansTankLevel = 350
   var trashBinLevel = 0
   
-  //portions for making product
-  var waterPortion = 50
-  var milkPortion = 50
-  var beansPortion = 50
-  var trashPortion = 50
-  
-  var waterForProductPortion = 0
-  var milkForProductPortion = 0
-  var beansForProductPortion = 0
-  var trashForProductPortion = 0
-  
-  //check level of tanks
-  func isEnoughIngridientsInTanks(waterTank: Int, milkTank: Int, beansTank: Int) -> Bool {
-    var result: Bool = false
-    
-    // add as recipes and check avilability for each recipe
-    if waterTankLevel >= waterForProductPortion && milkTankLevel >= milkForProductPortion && beansTankLevel >= beansForProductPortion{
+  //check level of tanks and trash bean
+  func isEnoughIngridientsForProduct(drink: Drinks) -> Bool {
+    var result = false
+    if waterTankLevel >= drink.water && milkTankLevel >= drink.milk && beansTankLevel >= drink.beans{
       result = true
     }
     return result
-    
   }
   
-  func isTrashBinIsEmpty(trashTank: Int) -> Bool {
-    var result: Bool = false
-    if trashBinLevel <= trashBinCapasity {
+  func isTankIsFull(service: Service) -> Bool {
+    var result = false
+    if waterTankCapasity < (waterTankLevel + service.water) ||
+      milkTankCapasity < (milkTankLevel + service.milk) ||
+      beansTankCapasity < (beansTankLevel + service.beans){
+      result = true
+    }
+    return result
+  }
+  
+  func isTrashBinIsEmpty(drink: Drinks) -> Bool {
+    var result = false
+    if trashBinCapasity > (trashBinLevel + drink.trash) {
       result = true
     }
     return result
   }
   
   //actions
-  func addMilkToTank() -> String {
+  func addProduct(service: Service) -> String {
     var labelText: String = ""
-    if (milkTankLevel + milkIncome) < milkTankCapasity {
-      milkTankLevel += milkIncome
-      labelText = "Level of Milk is \(milkTankLevel)"
+    if !isTankIsFull(service: service) {
+      waterTankLevel += service.water
+      milkTankLevel  += service.milk
+      beansTankLevel += service.beans
+      labelText = "product added"
     } else {
-      labelText = "milk tank is almost full - \(milkTankLevel). maximum capacity is \(milkTankCapasity)"
-      
+      labelText = "tank is full"
     }
-    return labelText
-  }
-  
-  func addWaterToTank() -> String {
-    var labelText: String = ""
-    if (waterTankLevel + waterIncome) < waterTankCapasity {
-      waterTankLevel += waterIncome
-      labelText = "Level of Water is \(waterTankLevel)"
-    } else {
-      labelText = "water tank is almost full - \(waterTankLevel). maximum capacity is \(waterTankCapasity)"
-    }
-    return labelText
-  }
-  
-  func addBeansToTank() -> String {
-    var labelText: String = ""
-    if (beansTankLevel + beansIncome) < beansTankCapasity {
-      beansTankLevel += beansIncome
-      labelText = "Level of Beans is \(beansTankLevel)"
-    } else {
-      labelText = "beans tank is almost full - \(beansTankLevel). maximum capacity is \(beansTankCapasity)"
-    }
-    return labelText
-  }
-  
-  func cleanTrashBin() -> String {
-    let labelText: String = "Bin cleaned"
-    trashBinLevel = 0
     return labelText
   }
   
   func initRecipe(drink: Drinks) -> String {
-     var labelText: String = ""
-     if isTrashBinIsEmpty(trashTank: trashBinLevel) {
-       if isEnoughIngridientsInTanks(waterTank: waterTankLevel, milkTank: milkTankLevel, beansTank: beansTankLevel) {
-         waterTankLevel -= drink.water
-         beansTankLevel -= drink.beans
-         milkTankLevel -= drink.milk
-         trashBinLevel += drink.trash
-         labelText = "\(drink.name) is ready \u{2615}"
-         return labelText
-       }else {
-         labelText = "not enought ingridients"
-       }
-     }  else {
-       labelText = "Clean trash bin"
-     }
-     return labelText
-   }
-
-
+    var labelText: String = ""
+    if isTrashBinIsEmpty(drink: drink) {
+      if isEnoughIngridientsForProduct(drink: drink) {
+        waterTankLevel -= drink.water
+        beansTankLevel -= drink.beans
+        milkTankLevel -= drink.milk
+        trashBinLevel += drink.trash
+        labelText = "\(drink.name) is ready \u{2615}"
+        return labelText
+      }else {
+        labelText = "not enought ingridients"
+      }
+    }  else {
+      labelText = "Clean trash bin"
+    }
+    return labelText
+  }
+  
+  func cleanTrashBin(service: Service) -> String {
+    var labelText: String = ""
+    trashBinLevel = service.trash
+    labelText = "bin is empty"
+    return labelText
+  }
 }
 
 

@@ -22,27 +22,24 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     
-    
-    
   }
   
   @IBAction func addMilkButton() {
-    titleLabel.text = firstMachine.addMilkToTank()
+    //titleLabel.text = firstMachine.addMilkToTank()
+    titleLabel.text = firstMachine.addProduct(service: Service.addMilk())
   }
   
   @IBAction func addWaterButton() {
-    titleLabel.text = firstMachine.addWaterToTank()
+    titleLabel.text = firstMachine.addProduct(service: Service.addWater())
   }
   
   @IBAction func addBeansButton() {
-    titleLabel.text = firstMachine.addBeansToTank()
+    titleLabel.text = firstMachine.addProduct(service: Service.addBeans())
   }
   
   @IBAction func cleanBinButton(_ sender: UIButton) {
-    titleLabel.text = firstMachine.cleanTrashBin()
+    titleLabel.text = firstMachine.cleanTrashBin(service: Service.cleanTrashBin())
   }
-  
-  
   
   @IBAction func showLevelOfIngridientsButton() {
     titleLabel.text = """

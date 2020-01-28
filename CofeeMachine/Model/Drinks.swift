@@ -22,15 +22,14 @@ class Drinks: NSObject {
     self.beans = beans
     self.milk = milk
     self.trash = trash
-    
   }
   
   static func capuchinoDrink() -> Drinks {
-    return Drinks(name: "Capuchino", water: 100, beans: 100, milk: 50, trash: 100)
+    return Drinks(name: "Capuchino", water: 100, beans: 100, milk: 50, trash: 10)
   }
   
   static func espresso() -> Drinks {
-    return Drinks(name: "Espresso", water: 50, beans: 200, milk: 0, trash: 200)
+    return Drinks(name: "Espresso", water: 50, beans: 200, milk: 0, trash: 20)
   }
   
 }
