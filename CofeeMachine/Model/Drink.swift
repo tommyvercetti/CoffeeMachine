@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Drinks: NSObject {
+class Drink: NSObject {
   let name: String
   let water: Int
   let beans: Int
@@ -24,12 +24,12 @@ class Drinks: NSObject {
     self.trash = trash
   }
   
-  static func capuchinoDrink() -> Drinks {
-    return Drinks(name: "Capuchino", water: 100, beans: 100, milk: 50, trash: 10)
+  static func capuchino() -> Drink {
+    return Drink(name: "Capuchino", water: 100, beans: 100, milk: 50, trash: 10)
   }
   
-  static func espresso() -> Drinks {
-    return Drinks(name: "Espresso", water: 50, beans: 200, milk: 0, trash: 20)
+  static func espresso() -> Drink {
+    return Drink(name: "Espresso", water: 50, beans: 200, milk: 0, trash: 20)
   }
   
 }

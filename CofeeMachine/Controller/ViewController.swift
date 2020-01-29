@@ -22,23 +22,23 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
     
+    
   }
   
   @IBAction func addMilkButton() {
-    //titleLabel.text = firstMachine.addMilkToTank()
-    titleLabel.text = firstMachine.addProduct(service: Service.addMilk())
+    titleLabel.text = firstMachine.makeService(type: IngridientType.milk)
   }
   
   @IBAction func addWaterButton() {
-    titleLabel.text = firstMachine.addProduct(service: Service.addWater())
+    titleLabel.text = firstMachine.makeService(type: IngridientType.water)
   }
   
   @IBAction func addBeansButton() {
-    titleLabel.text = firstMachine.addProduct(service: Service.addBeans())
+    titleLabel.text = firstMachine.makeService(type: IngridientType.beans)
   }
   
   @IBAction func cleanBinButton(_ sender: UIButton) {
-    titleLabel.text = firstMachine.cleanTrashBin(service: Service.cleanTrashBin())
+    titleLabel.text = firstMachine.makeService(type: IngridientType.trash)
   }
   
   @IBAction func showLevelOfIngridientsButton() {
@@ -52,11 +52,12 @@ class ViewController: UIViewController {
   }
   
   @IBAction func makeCapuchinoButton() {
-    titleLabel.text = firstMachine.initRecipe(drink: Drinks.capuchinoDrink())
+    titleLabel.text = firstMachine.initRecipe(drink: Drink.capuchino())
+    
   }
 
   @IBAction func makeEspressoButton() {
-    titleLabel.text = firstMachine.initRecipe(drink: Drinks.espresso())
+    titleLabel.text = firstMachine.initRecipe(drink: Drink.espresso())
   }
 }
 
