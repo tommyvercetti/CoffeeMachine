@@ -12,7 +12,8 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var titleLabel: UILabel!{
     didSet{
-      titleLabel.text = "Imagine, there is no spoon \u{1F944}"
+      titleLabel.text = "Run number \(increaseRunCount())"
+      
     }
   }
   
@@ -21,6 +22,14 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    
+  }
+  
+  //UserDefaults
+  func increaseRunCount() -> Int {
+    let value = UserDefaults.standard.integer(forKey: "runCount") + 1
+    UserDefaults.standard.setValue(value, forKey: "runCount")
+    return value
   }
   
   @IBAction func addMilkButton() {
