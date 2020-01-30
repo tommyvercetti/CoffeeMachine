@@ -14,7 +14,6 @@ class Drink: NSObject {
   let beans: Int
   let milk: Int
   let trash: Int
-  //let portion: Int - TBD later
   
   init(name: String, water: Int, beans: Int, milk: Int, trash: Int) {
     self.name = name

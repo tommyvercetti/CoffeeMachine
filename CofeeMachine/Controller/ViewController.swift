@@ -16,13 +16,11 @@ class ViewController: UIViewController {
     }
   }
   
-  let firstMachine = CofeMachine.init()
+  let firstMachine = CofeMachine()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    
-    
   }
   
   @IBAction func addMilkButton() {

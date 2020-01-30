@@ -37,27 +37,6 @@ class CofeMachine: NSObject {
     return result
   }
   
-//  func isTankIsFull(service: IngridientType) -> Bool {
-//    var result = false
-//    if waterTankCapasity < (waterTankLevel + IngridientType.water.quantity) ||
-//      milkTankCapasity < (milkTankLevel + IngridientType.milk.quantity) ||
-//      beansTankCapasity < (beansTankLevel + IngridientType.beans.quantity){
-//      result = true
-//    }
-//    return result
-//  }
-  
-  
-  func isTankIsFull() -> Bool {
-    var result = false
-    if waterTankCapasity < (waterTankLevel + waterPortion) ||
-      milkTankCapasity < (milkTankLevel + milkPortion) ||
-      beansTankCapasity < (beansTankLevel + beansPortion){
-      result = true
-    }
-    return result
-  }
-  
   func isTrashBinIsEmpty(drink: Drink) -> Bool {
     var result = false
     if trashBinCapasity > (trashBinLevel + drink.trash) {
@@ -67,19 +46,6 @@ class CofeMachine: NSObject {
   }
   
   //actions
-//  func addProduct(service: Service) -> String {
-//    var labelText: String = ""
-//    if !isTankIsFull(service: service) {
-//      waterTankLevel += service.water
-//      milkTankLevel  += service.milk
-//      beansTankLevel += service.beans
-//      labelText = "\(service.name) added"
-//    } else {
-//      labelText = "\(service.name) tank is full"
-//    }
-//    return labelText
-//  }
-  
   func initRecipe(drink: Drink) -> String {
     var labelText: String = ""
     if isTrashBinIsEmpty(drink: drink) {
@@ -98,59 +64,40 @@ class CofeMachine: NSObject {
     }
     return labelText
   }
-  
-//  func cleanTrashBin(service: Service) -> String {
-//    var labelText: String = ""
-//    trashBinLevel = service.trash
-//    labelText = "bin is empty"
-//    return labelText
-//  }
-  
-  func makeService(type: IngridientType) -> String{
+ 
+  func makeService(type: IngridientType) -> String {
     var labelText: String = ""
-    if !isTankIsFull() {
       switch type {
       case .water:
-        waterTankLevel += waterPortion
-        labelText = "\(waterPortion) Water added"
+        if waterTankCapasity >= (waterTankLevel + waterPortion) {
+          waterTankLevel += waterPortion
+          labelText = "\(waterPortion) Water added"
+        } else {
+          labelText = "Water tank is full"
+        }
       case .milk:
-        milkTankLevel += milkPortion
-        labelText = "\(milkPortion) Milk added"
+        if milkTankCapasity >= (milkTankLevel + milkPortion) {
+          milkTankLevel += milkPortion
+          labelText = "\(milkPortion) Milk added"
+        } else {
+          labelText = "Milk tank is full"
+        }
       case .beans:
-        beansTankLevel += beansPortion
-        labelText = "\(beansPortion) Beans added"
+        if beansTankCapasity >= (beansTankLevel + beansPortion) {
+          beansTankLevel += beansPortion
+          labelText = "\(beansPortion) Beans added"
+        } else {
+          labelText = "Beans tank is full"
+        }
       case .trash:
         trashBinLevel = 0
         labelText = "Bin Cleaned"
       }
-    }
     return labelText
   }
   
   
-  
-  
-//  func addProductEnum(service: IngridientType) -> String {
-//    var labelText: String = ""
-//    if !isTankIsFull(service: service) {
-//
-//      waterTankLevel += IngridientType.water.quantity
-//      labelText = "\(IngridientType.water.ingridient) added"
-//
-//      milkTankLevel  += IngridientType.milk.quantity
-//      labelText = "\(IngridientType.milk.ingridient) added"
-//
-//      beansTankLevel += IngridientType.beans.quantity
-//      labelText = "\(IngridientType.beans.ingridient) added"
-//
-//    }else {
-//      labelText = "\(IngridientType.water.ingridient) tank is full"
-//      labelText = "\(IngridientType.milk.ingridient) tank is full"
-//      labelText = "\(IngridientType.beans.ingridient) tank is full"
-//    }
-//    return labelText
-//  }
-  
+ 
 }
 
 
