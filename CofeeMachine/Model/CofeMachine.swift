@@ -22,13 +22,12 @@ class CofeMachine: NSObject {
   var beansTankLevel = UserDefaults.standard.integer(forKey: Constants.storedBeansLevel)
   var trashBinLevel = UserDefaults.standard.integer(forKey: Constants.storedTrashLevel)
   
+  
   // MARK: - portions
   var waterPortion = 150
   var milkPortion = 150
   var beansPortion = 150
   var trashPortion = 0
-  
-  
   
   
   // MARK: - check level of tanks and trash bean
@@ -47,6 +46,7 @@ class CofeMachine: NSObject {
     }
     return result
   }
+  
   
   // MARK: - actions
   func initRecipe(drink: Drink) -> String {

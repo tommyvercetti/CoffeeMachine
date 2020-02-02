@@ -73,6 +73,14 @@ class ViewController: UIViewController {
     UserDefaults.standard.setValue(value, forKey: Constants.runCount)
     return value
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let serviceVC = segue.destination as? ServiceViewController {
+      print("service tab opened")
+      serviceVC.stringTitle = "Demo mo mo"
+    }
+    
+  }
 }
 
 
