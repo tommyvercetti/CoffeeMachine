@@ -10,25 +10,28 @@ import UIKit
 
 class CofeMachine: NSObject {
   
-  //capacity of tanks
+  // MARK: - capacity of tanks
   let waterTankCapasity = 2000
   let milkTankCapasity = 1500
   let beansTankCapasity = 2500
   let trashBinCapasity = 2500
   
-  //tankState
-  var waterTankLevel = 500
-  var milkTankLevel = 750
-  var beansTankLevel = 350
-  var trashBinLevel = 0
+  // MARK: - tankState
+  var waterTankLevel = UserDefaults.standard.integer(forKey: Constants.storedWaterLevel)
+  var milkTankLevel = UserDefaults.standard.integer(forKey: Constants.storedMilkLevel)
+  var beansTankLevel = UserDefaults.standard.integer(forKey: Constants.storedBeansLevel)
+  var trashBinLevel = UserDefaults.standard.integer(forKey: Constants.storedTrashLevel)
   
-  //portions
+  // MARK: - portions
   var waterPortion = 150
   var milkPortion = 150
   var beansPortion = 150
   var trashPortion = 0
   
-  //check level of tanks and trash bean
+  
+  
+  
+  // MARK: - check level of tanks and trash bean
   func isEnoughIngridientsForProduct(drink: Drink) -> Bool {
     var result = false
     if waterTankLevel >= drink.water && milkTankLevel >= drink.milk && beansTankLevel >= drink.beans{
@@ -45,15 +48,22 @@ class CofeMachine: NSObject {
     return result
   }
   
-  //actions
+  // MARK: - actions
   func initRecipe(drink: Drink) -> String {
+    
+    
     var labelText: String = ""
     if isTrashBinIsEmpty(drink: drink) {
       if isEnoughIngridientsForProduct(drink: drink) {
         waterTankLevel -= drink.water
-        beansTankLevel -= drink.beans
+        UserDefaults.standard.set(waterTankLevel, forKey: Constants.storedWaterLevel)
         milkTankLevel -= drink.milk
+        UserDefaults.standard.set(milkTankLevel, forKey: Constants.storedMilkLevel)
+        beansTankLevel -= drink.beans
+        UserDefaults.standard.set(beansTankLevel, forKey: Constants.storedBeansLevel)
         trashBinLevel += drink.trash
+        UserDefaults.standard.set(trashBinLevel, forKey: Constants.storedTrashLevel)
+
         labelText = "\(drink.name) is ready \u{2615}"
         return labelText
       }else {
@@ -71,6 +81,7 @@ class CofeMachine: NSObject {
       case .water:
         if waterTankCapasity >= (waterTankLevel + waterPortion) {
           waterTankLevel += waterPortion
+          UserDefaults.standard.set(waterTankLevel, forKey: Constants.storedWaterLevel)
           labelText = "\(waterPortion) Water added"
         } else {
           labelText = "Water tank is full"
@@ -78,6 +89,7 @@ class CofeMachine: NSObject {
       case .milk:
         if milkTankCapasity >= (milkTankLevel + milkPortion) {
           milkTankLevel += milkPortion
+          UserDefaults.standard.set(milkTankLevel, forKey: Constants.storedMilkLevel)
           labelText = "\(milkPortion) Milk added"
         } else {
           labelText = "Milk tank is full"
@@ -85,19 +97,18 @@ class CofeMachine: NSObject {
       case .beans:
         if beansTankCapasity >= (beansTankLevel + beansPortion) {
           beansTankLevel += beansPortion
+          UserDefaults.standard.set(beansTankLevel, forKey: Constants.storedBeansLevel)
           labelText = "\(beansPortion) Beans added"
         } else {
           labelText = "Beans tank is full"
         }
       case .trash:
         trashBinLevel = 0
+        UserDefaults.standard.set(trashBinLevel, forKey: Constants.storedTrashLevel)
         labelText = "Bin Cleaned"
       }
     return labelText
   }
-  
-  
- 
 }
 
 
