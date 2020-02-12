@@ -13,7 +13,7 @@
 		E6699BB623DA5C0D00DB4461 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6699BB523DA5C0D00DB4461 /* Service.swift */; };
 		E6C797F723C7657E007A9AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C797F623C7657E007A9AA4 /* AppDelegate.swift */; };
 		E6C797F923C7657E007A9AA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C797F823C7657E007A9AA4 /* SceneDelegate.swift */; };
-		E6C797FB23C7657E007A9AA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C797FA23C7657E007A9AA4 /* ViewController.swift */; };
+		E6C797FB23C7657E007A9AA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C797FA23C7657E007A9AA4 /* MainViewController.swift */; };
 		E6C797FE23C7657E007A9AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C797FC23C7657E007A9AA4 /* Main.storyboard */; };
 		E6C7980023C76583007A9AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C797FF23C76583007A9AA4 /* Assets.xcassets */; };
 		E6C7980323C76583007A9AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C7980123C76583007A9AA4 /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 		E6C797F323C7657E007A9AA4 /* CofeeMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CofeeMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C797F623C7657E007A9AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6C797F823C7657E007A9AA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E6C797FA23C7657E007A9AA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6C797FA23C7657E007A9AA4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E6C797FD23C7657E007A9AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6C797FF23C76583007A9AA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6C7980223C76583007A9AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		E611144423CF391300F0234C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E6C797FA23C7657E007A9AA4 /* ViewController.swift */,
+				E6C797FA23C7657E007A9AA4 /* MainViewController.swift */,
 				E6D4E2BF23E753F100CF4C52 /* ServiceViewController.swift */,
 			);
 			path = Controller;
@@ -185,7 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6C797FB23C7657E007A9AA4 /* ViewController.swift in Sources */,
+				E6C797FB23C7657E007A9AA4 /* MainViewController.swift in Sources */,
 				E60A731A23D6233A003AE53E /* Drink.swift in Sources */,
 				E6C797F723C7657E007A9AA4 /* AppDelegate.swift in Sources */,
 				E611144223C8F22900F0234C /* CofeMachine.swift in Sources */,
@@ -336,7 +336,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 485AHD53BQ;
 				INFOPLIST_FILE = CofeeMachine/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -344,6 +346,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.andriankryk.CofeeMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,7 +356,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 485AHD53BQ;
 				INFOPLIST_FILE = CofeeMachine/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -361,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.andriankryk.CofeeMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

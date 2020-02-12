@@ -17,3 +17,4 @@ struct Constants {
   static let storedTrashLevel = "trashLevel"
   
 }
+
