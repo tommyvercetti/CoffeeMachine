@@ -62,12 +62,12 @@ class MainViewController: UIViewController {
   
   // MARK: - Product Actions
   @IBAction func makeCapuchinoButton() {
-    ingridientsMonitorLabel.text = firstMachine.initRecipe(drink: Drink.capuchino())
+    ingridientsMonitorLabel.text = firstMachine.makeDrink(drink: Drink.capuchino())
     
   }
 
   @IBAction func makeEspressoButton() {
-    ingridientsMonitorLabel.text = firstMachine.initRecipe(drink: Drink.espresso())
+    ingridientsMonitorLabel.text = firstMachine.makeDrink(drink: Drink.espresso())
   }
   
   // MARK: - UserDefaults

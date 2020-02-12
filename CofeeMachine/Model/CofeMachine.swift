@@ -69,7 +69,7 @@ class CofeMachine: NSObject {
   }
   
   // MARK: - Product Actions
-  func initRecipe(drink: Drink) -> String {
+  func makeDrink(drink: Drink) -> String {
     var labelText: String = ""
     if isTrashBinIsEmpty(drink: drink) {
       if isEnoughIngridientsForProduct(drink: drink) {
