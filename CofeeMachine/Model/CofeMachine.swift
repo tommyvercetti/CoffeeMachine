@@ -49,6 +49,7 @@ class CofeMachine: NSObject {
     self.milkPortion = milkPortion
     self.beansPortion = beansPortion
     self.trashPortion = trashPortion
+    
   }
   
   // MARK: - check level of tanks and trash bean
@@ -83,10 +84,10 @@ class CofeMachine: NSObject {
         trashBinLevel = saveUserDefaults(productLevel: trashBinLevel, key: Constants.storedTrashLevel)
         labelText = "\(drink.name) is ready \u{2615}"
         return labelText
-      }else {
+      } else {
         labelText = "not enought ingridients"
       }
-    }  else {
+    } else {
       labelText = "Clean trash bin"
     }
     return labelText
@@ -108,39 +109,41 @@ class CofeMachine: NSObject {
         labelText = "Water tank is full"
         return (labelText)
       }
+
     }
   }
   
   func makeService(type: IngridientType) -> (String) {
     switch type {
     case .water:
-      waterTankLevel = restoreUserDefaults(key: Constants.storedWaterLevel)
+      newValueOfTankLevel = restoreUserDefaults(key: Constants.storedWaterLevel)
       let labelText = initService(tankCapasity: waterTankCapasity, tankLevel: waterTankLevel, portion: waterPortion, ingridientType: .water)
       waterTankLevel = saveUserDefaults(productLevel: newValueOfTankLevel, key: Constants.storedWaterLevel)
       return labelText
       
     case .milk:
-      milkTankLevel = restoreUserDefaults(key: Constants.storedMilkLevel)
+      newValueOfTankLevel = restoreUserDefaults(key: Constants.storedMilkLevel)
       let labelText = initService(tankCapasity: milkTankCapasity, tankLevel: milkTankLevel, portion: milkPortion, ingridientType: .milk)
       milkTankLevel = saveUserDefaults(productLevel: newValueOfTankLevel, key: Constants.storedMilkLevel)
       return labelText
       
     case .beans:
-      beansTankLevel = restoreUserDefaults(key: Constants.storedBeansLevel)
+      newValueOfTankLevel = restoreUserDefaults(key: Constants.storedBeansLevel)
       let labelText = initService(tankCapasity: beansTankCapasity, tankLevel: beansTankLevel, portion: beansPortion, ingridientType: .beans)
       beansTankLevel = saveUserDefaults(productLevel: newValueOfTankLevel, key: Constants.storedBeansLevel)
       return labelText
       
     case .trash:
-      trashBinLevel = restoreUserDefaults(key: Constants.storedTrashLevel)
+      newValueOfTankLevel = restoreUserDefaults(key: Constants.storedTrashLevel)
       let labelText = initService(tankCapasity: waterTankCapasity, tankLevel: waterTankLevel, portion: waterPortion, ingridientType: .trash)
       trashBinLevel = saveUserDefaults(productLevel: newValueOfTankLevel, key: Constants.storedTrashLevel)
       return labelText
+      
     }
   }
   
   // MARK: - User Defaults
-  func saveUserDefaults(productLevel: Int, key: String) -> Int{
+  func saveUserDefaults(productLevel: Int, key: String) -> Int {
     UserDefaults.standard.set(productLevel, forKey: key)
     return restoreUserDefaults(key: key)
   }
@@ -148,4 +151,5 @@ class CofeMachine: NSObject {
   func restoreUserDefaults(key: String) -> Int {
     return UserDefaults.standard.integer(forKey: key)
   }
+  
 }

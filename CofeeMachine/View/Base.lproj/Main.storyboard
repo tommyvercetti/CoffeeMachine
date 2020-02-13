@@ -15,59 +15,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MachineIMG" translatesAutoresizingMaskIntoConstraints="NO" id="Khm-4s-INs">
-                                <rect key="frame" x="20" y="393" width="374" height="469"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SAECO-XELSIS-COFFEE-MACHINE" translatesAutoresizingMaskIntoConstraints="NO" id="Khm-4s-INs">
+                                <rect key="frame" x="94" y="542" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0F5-Jm-CHr"/>
+                                    <constraint firstAttribute="width" constant="300" id="2c3-cE-sOh"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-yE-JfY">
-                                <rect key="frame" x="139" y="670" width="115" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="tintColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Make Capuchino">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="makeCapuchinoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="K0a-1W-eew"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vH-Cl-0hm">
-                                <rect key="frame" x="267" y="670" width="115" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Make Espresso">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="makeEspressoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fn-Ew-xDZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELj-v2-anf">
-                                <rect key="frame" x="31" y="107" width="336" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELj-v2-anf">
+                                <rect key="frame" x="8" y="96" width="240" height="120"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.8666666666666667" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="DPI-hV-jPc"/>
+                                    <constraint firstAttribute="width" constant="240" id="h09-yu-axf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Run Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXi-cy-o9t">
-                                <rect key="frame" x="31" y="828" width="141" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXi-cy-o9t">
+                                <rect key="frame" x="8" y="833.5" width="96" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="310-HX-LIg">
-                                <rect key="frame" x="182" y="353" width="172" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show Level of Ingridients"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="310-HX-LIg">
+                                <rect key="frame" x="8" y="224" width="172" height="30"/>
+                                <color key="backgroundColor" red="0.87058823529411766" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show Level of Ingridients">
+                                    <color key="titleColor" red="0.47058823529411764" green="0.66666666666666663" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="showLevelOfIngridientsButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="OyI-3H-df0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-yE-JfY">
+                                <rect key="frame" x="8" y="262" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.86974650620000005" green="0.89820367099999998" blue="0.89824861290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="evH-zh-g9a"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Make Capuchino">
+                                    <color key="titleColor" red="0.46349763869999999" green="0.66611474749999999" blue="0.73342889550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="makeCapuchinoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="K0a-1W-eew"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vH-Cl-0hm">
+                                <rect key="frame" x="8" y="300" width="115" height="30"/>
+                                <color key="backgroundColor" red="0.86974650620000005" green="0.89820367099999998" blue="0.89824861290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="brv-o4-CPb"/>
+                                </constraints>
+                                <state key="normal" title="Make Espresso">
+                                    <color key="titleColor" red="0.45526552199999998" green="0.66605246070000002" blue="0.73753279449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="makeEspressoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fn-Ew-xDZ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.57647058823529407" green="0.85882352941176465" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0vH-Cl-0hm" firstAttribute="top" secondItem="mCl-yE-JfY" secondAttribute="bottom" constant="8" id="EHZ-sV-ONz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Khm-4s-INs" secondAttribute="trailing" constant="20" id="H8A-Fm-2Rg"/>
+                            <constraint firstItem="ELj-v2-anf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Jww-rg-oJP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="IXi-cy-o9t" secondAttribute="bottom" constant="8" id="Rlu-4E-xwO"/>
+                            <constraint firstItem="310-HX-LIg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="SqY-XQ-Z3B"/>
+                            <constraint firstItem="mCl-yE-JfY" firstAttribute="top" secondItem="310-HX-LIg" secondAttribute="bottom" constant="8" id="TAl-ha-MP2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Khm-4s-INs" secondAttribute="bottom" constant="20" id="WOd-rX-pda"/>
+                            <constraint firstItem="mCl-yE-JfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="aLY-Ce-LPT"/>
+                            <constraint firstItem="310-HX-LIg" firstAttribute="top" secondItem="ELj-v2-anf" secondAttribute="bottom" constant="8" id="gzt-Sh-VsO"/>
+                            <constraint firstItem="IXi-cy-o9t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="iAW-Je-x13"/>
+                            <constraint firstItem="ELj-v2-anf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="uio-2Y-Cab"/>
+                            <constraint firstItem="0vH-Cl-0hm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="wz3-w4-bYw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Coffee Machine" id="8cU-AA-v2t">
@@ -96,60 +138,113 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwC-Zp-1gm">
-                                <rect key="frame" x="28" y="615" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwC-Zp-1gm">
+                                <rect key="frame" x="8" y="262" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.86974650620000005" green="0.89820367099999998" blue="0.89824861290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add Milk">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.47058823529999999" green="0.66666666669999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addMilkButton:" destination="gQm-QX-37Y" eventType="touchUpInside" id="D6v-bj-XTS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-0z-LV0">
-                                <rect key="frame" x="179" y="235" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Water"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fid-0z-LV0">
+                                <rect key="frame" x="76" y="262" width="72" height="30"/>
+                                <color key="backgroundColor" red="0.86974650620000005" green="0.89820367099999998" blue="0.89824861290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Water">
+                                    <color key="titleColor" red="0.45526552199999998" green="0.66605246070000002" blue="0.73753279449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addWaterButton:" destination="gQm-QX-37Y" eventType="touchUpInside" id="Ck2-wn-djd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ9-a5-ezD">
-                                <rect key="frame" x="290" y="235" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ9-a5-ezD">
+                                <rect key="frame" x="156" y="262" width="74" height="30"/>
+                                <color key="backgroundColor" red="0.86974650620000005" green="0.89820367099999998" blue="0.89824861290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add Beans">
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.45526552199999998" green="0.66605246070000002" blue="0.73753279449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addBeansButton:" destination="gQm-QX-37Y" eventType="touchUpInside" id="bPi-K0-v4H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdM-BV-taz">
-                                <rect key="frame" x="70" y="374" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Clean Bin"/>
-                                <connections>
-                                    <action selector="cleanBinButton:" destination="gQm-QX-37Y" eventType="touchUpInside" id="bQ9-Qx-guV"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwR-Q4-HUP">
-                                <rect key="frame" x="20" y="88" width="363" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwR-Q4-HUP">
+                                <rect key="frame" x="8" y="96" width="240" height="120"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.8666666666666667" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4MX-FQ-fUw"/>
+                                    <constraint firstAttribute="height" constant="120" id="zCF-Dh-Hd5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-i2-NXz">
-                                <rect key="frame" x="182" y="357" width="191" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show Level of Ingridients"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDc-i2-NXz">
+                                <rect key="frame" x="8" y="224" width="172" height="30"/>
+                                <color key="backgroundColor" red="0.86974650620000005" green="0.89820367099999998" blue="0.89824861290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show Level of Ingridients">
+                                    <color key="titleColor" red="0.47058823529999999" green="0.66666666669999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="showLevelOfIngridientsButton" destination="gQm-QX-37Y" eventType="touchUpInside" id="NDe-He-bl2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdM-BV-taz">
+                                <rect key="frame" x="8" y="300" width="65" height="30"/>
+                                <color key="backgroundColor" red="0.86974650620000005" green="0.89820367099999998" blue="0.89824861290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Clean Bin">
+                                    <color key="titleColor" red="0.45526552199999998" green="0.66605246070000002" blue="0.73753279449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cleanBinButton:" destination="gQm-QX-37Y" eventType="touchUpInside" id="bQ9-Qx-guV"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.62669432160000005" green="0.88262802360000003" blue="0.91715627909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iZ9-a5-ezD" firstAttribute="leading" secondItem="Fid-0z-LV0" secondAttribute="trailing" constant="8" id="0gK-zY-PSQ"/>
+                            <constraint firstItem="Fid-0z-LV0" firstAttribute="leading" secondItem="IwC-Zp-1gm" secondAttribute="trailing" constant="8" id="7CG-b8-nXz"/>
+                            <constraint firstItem="JwR-Q4-HUP" firstAttribute="leading" secondItem="ow0-9i-YIs" secondAttribute="leading" constant="8" id="7FR-zg-ADt"/>
+                            <constraint firstItem="AdM-BV-taz" firstAttribute="leading" secondItem="ow0-9i-YIs" secondAttribute="leading" constant="8" id="IeZ-vm-ElK"/>
+                            <constraint firstItem="iZ9-a5-ezD" firstAttribute="top" secondItem="dDc-i2-NXz" secondAttribute="bottom" constant="8" id="Osd-Fm-5b3"/>
+                            <constraint firstItem="AdM-BV-taz" firstAttribute="top" secondItem="IwC-Zp-1gm" secondAttribute="bottom" constant="8" id="TLv-eQ-7hf"/>
+                            <constraint firstItem="Fid-0z-LV0" firstAttribute="top" secondItem="dDc-i2-NXz" secondAttribute="bottom" constant="8" id="WY5-IY-koP"/>
+                            <constraint firstItem="IwC-Zp-1gm" firstAttribute="top" secondItem="dDc-i2-NXz" secondAttribute="bottom" constant="8" id="Wf2-eT-UO5"/>
+                            <constraint firstItem="JwR-Q4-HUP" firstAttribute="top" secondItem="ow0-9i-YIs" secondAttribute="top" constant="8" id="aX3-cP-LVa"/>
+                            <constraint firstItem="IwC-Zp-1gm" firstAttribute="leading" secondItem="ow0-9i-YIs" secondAttribute="leading" constant="8" id="gDZ-Tz-qWy"/>
+                            <constraint firstItem="dDc-i2-NXz" firstAttribute="leading" secondItem="ow0-9i-YIs" secondAttribute="leading" constant="8" id="n8J-zj-PDT"/>
+                            <constraint firstItem="dDc-i2-NXz" firstAttribute="top" secondItem="JwR-Q4-HUP" secondAttribute="bottom" constant="8" id="vpZ-7n-kvx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ow0-9i-YIs"/>
                     </view>
                     <navigationItem key="navigationItem" id="jZa-tD-eGS"/>
@@ -181,7 +276,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MachineIMG" width="273" height="300"/>
+        <image name="SAECO-XELSIS-COFFEE-MACHINE" width="450" height="450"/>
         <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
 </document>

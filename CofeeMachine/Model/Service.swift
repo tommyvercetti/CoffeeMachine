@@ -12,6 +12,5 @@ enum IngridientType: Int {
   case milk
   case beans
   case trash
+  
 }
-
-

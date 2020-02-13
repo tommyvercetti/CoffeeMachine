@@ -13,6 +13,7 @@ class ServiceViewController: UIViewController {
   
   var stringTitle: String = ""
   var cofeMachineFromMainVC: CofeMachine!
+  var callback : ((String)->())?
   
   @IBOutlet weak var ingridientsMonitorLabel: UILabel!{
     didSet{
@@ -26,6 +27,7 @@ class ServiceViewController: UIViewController {
     // Do any additional setup after loading the view.
     
     navigationItem.title = stringTitle
+    
   }
   
   
@@ -39,11 +41,13 @@ class ServiceViewController: UIViewController {
     Trash bin - \(cofeMachineFromMainVC.restoreUserDefaults(key: Constants.storedTrashLevel))
     """
     ingridientsMonitorLabel.numberOfLines = 4
+    callback?(ingridientsMonitorLabel.text ?? "")
   }
   
   @IBAction func showLevelOfIngridientsButton() {
     showLevelOfIngridients()
   }
+  
   
   // MARK: - Service Actions
   @IBAction func addWaterButton(_ sender: UIButton) {
@@ -62,6 +66,11 @@ class ServiceViewController: UIViewController {
   @IBAction func cleanBinButton(_ sender: UIButton) {
     ingridientsMonitorLabel.text = cofeMachineFromMainVC.makeService(type: IngridientType.trash)
   }
+  
+  
+  // MARK: - Segues
+  
+  
   
   
   
