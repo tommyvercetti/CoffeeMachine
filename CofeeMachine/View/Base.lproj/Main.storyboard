@@ -7,6 +7,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Info View Controller-->
+        <scene sceneID="gP5-TU-k8H">
+            <objects>
+                <viewController id="YWb-ZS-z5n" customClass="InfoViewController" customModule="CofeeMachine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JUV-ZK-iaz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXi-cy-o9t">
+                                <rect key="frame" x="8" y="8" width="96" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cups ready" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rep-2g-JbR">
+                                <rect key="frame" x="8" y="36.5" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IXi-cy-o9t" firstAttribute="top" secondItem="x9A-8k-Bs8" secondAttribute="top" constant="8" id="1zZ-fJ-Km4"/>
+                            <constraint firstItem="rep-2g-JbR" firstAttribute="top" secondItem="IXi-cy-o9t" secondAttribute="bottom" constant="8" id="6nA-JX-iiE"/>
+                            <constraint firstItem="IXi-cy-o9t" firstAttribute="leading" secondItem="x9A-8k-Bs8" secondAttribute="leading" constant="8" id="o6y-Tf-equ"/>
+                            <constraint firstItem="rep-2g-JbR" firstAttribute="leading" secondItem="x9A-8k-Bs8" secondAttribute="leading" constant="8" id="y7i-Rt-mbw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x9A-8k-Bs8"/>
+                    </view>
+                    <connections>
+                        <outlet property="cupCounterLabel" destination="rep-2g-JbR" id="JCS-7B-WD9"/>
+                        <outlet property="runCounterLabel" destination="IXi-cy-o9t" id="fp3-6s-OTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1i-8Z-HrR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="805"/>
+        </scene>
         <!--Coffee Machine-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -29,12 +68,6 @@
                                     <constraint firstAttribute="height" constant="120" id="DPI-hV-jPc"/>
                                     <constraint firstAttribute="width" constant="240" id="h09-yu-axf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXi-cy-o9t">
-                                <rect key="frame" x="8" y="833.5" width="96" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -94,19 +127,26 @@
                                     <action selector="makeEspressoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fn-Ew-xDZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bj-ZE-NhL">
+                                <rect key="frame" x="8" y="832" width="20" height="22"/>
+                                <state key="normal" image="info.circle.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="YWb-ZS-z5n" kind="presentation" id="3oq-YS-7PQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.57647058823529407" green="0.85882352941176465" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="5bj-ZE-NhL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="7TF-p3-n9t"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5bj-ZE-NhL" secondAttribute="bottom" constant="8" id="9XQ-YQ-b5L"/>
                             <constraint firstItem="0vH-Cl-0hm" firstAttribute="top" secondItem="mCl-yE-JfY" secondAttribute="bottom" constant="8" id="EHZ-sV-ONz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Khm-4s-INs" secondAttribute="trailing" constant="20" id="H8A-Fm-2Rg"/>
                             <constraint firstItem="ELj-v2-anf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Jww-rg-oJP"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="IXi-cy-o9t" secondAttribute="bottom" constant="8" id="Rlu-4E-xwO"/>
                             <constraint firstItem="310-HX-LIg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="SqY-XQ-Z3B"/>
                             <constraint firstItem="mCl-yE-JfY" firstAttribute="top" secondItem="310-HX-LIg" secondAttribute="bottom" constant="8" id="TAl-ha-MP2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Khm-4s-INs" secondAttribute="bottom" constant="20" id="WOd-rX-pda"/>
                             <constraint firstItem="mCl-yE-JfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="aLY-Ce-LPT"/>
                             <constraint firstItem="310-HX-LIg" firstAttribute="top" secondItem="ELj-v2-anf" secondAttribute="bottom" constant="8" id="gzt-Sh-VsO"/>
-                            <constraint firstItem="IXi-cy-o9t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="iAW-Je-x13"/>
                             <constraint firstItem="ELj-v2-anf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="uio-2Y-Cab"/>
                             <constraint firstItem="0vH-Cl-0hm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="wz3-w4-bYw"/>
                         </constraints>
@@ -123,7 +163,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ingridientsMonitorLabel" destination="ELj-v2-anf" id="k59-KE-uoK"/>
-                        <outlet property="runCounterLabel" destination="IXi-cy-o9t" id="gNm-ie-5ek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -271,6 +310,13 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NH-bE-aBC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cups ready" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aCi-Mn-2cf">
+                    <rect key="frame" x="0.0" y="0.0" width="88" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
             <point key="canvasLocation" x="246" y="-611"/>
         </scene>
@@ -278,5 +324,6 @@
     <resources>
         <image name="SAECO-XELSIS-COFFEE-MACHINE" width="450" height="450"/>
         <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

@@ -13,7 +13,7 @@ class ServiceViewController: UIViewController {
   
   var stringTitle: String = ""
   var cofeMachineFromMainVC: CofeMachine!
-  var callback : ((String)->())?
+  var callback : ((String) -> ())?
   
   @IBOutlet weak var ingridientsMonitorLabel: UILabel!{
     didSet{
@@ -21,6 +21,8 @@ class ServiceViewController: UIViewController {
     }
   }
   
+  
+  // MARK: - viewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -41,7 +43,6 @@ class ServiceViewController: UIViewController {
     Trash bin - \(cofeMachineFromMainVC.restoreUserDefaults(key: Constants.storedTrashLevel))
     """
     ingridientsMonitorLabel.numberOfLines = 4
-    callback?(ingridientsMonitorLabel.text ?? "")
   }
   
   @IBAction func showLevelOfIngridientsButton() {
@@ -52,86 +53,27 @@ class ServiceViewController: UIViewController {
   // MARK: - Service Actions
   @IBAction func addWaterButton(_ sender: UIButton) {
     ingridientsMonitorLabel.text = cofeMachineFromMainVC.makeService(type: IngridientType.water)
+    callback?(ingridientsMonitorLabel.text ?? "")
+    
   }
   
   @IBAction func addMilkButton(_ sender: UIButton) {
     ingridientsMonitorLabel.text = cofeMachineFromMainVC.makeService(type: IngridientType.milk)
+    callback?(ingridientsMonitorLabel.text ?? "")
     
   }
   
   @IBAction func addBeansButton(_ sender: UIButton) {
     ingridientsMonitorLabel.text = cofeMachineFromMainVC.makeService(type: IngridientType.beans)
+    callback?(ingridientsMonitorLabel.text ?? "")
+    
   }
   
   @IBAction func cleanBinButton(_ sender: UIButton) {
     ingridientsMonitorLabel.text = cofeMachineFromMainVC.makeService(type: IngridientType.trash)
+    callback?(ingridientsMonitorLabel.text ?? "")
+    
   }
-  
-  
-  // MARK: - Segues
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  //  @IBAction func testShowMilkButton(_ sender: UIButton) {
-  //    print("qoo-qoo")
-  //    print("level is - \(cofeMachineFromMainVC.restoreUserDefaults(key: Constants.storedMilkLevel))")
-  //    milkLevelServiceVC.text = String(cofeMachineFromMainVC.restoreUserDefaults(key: Constants.storedMilkLevel))
-  //
-  //  }
-  //
-  //  @IBAction func testAddMilkButton(_ sender: UIButton) {
-  ////    cofeMachineFromMainVC.milkTankLevel += cofeMachineFromMainVC.milkPortion
-  //    cofeMachineFromMainVC.makeService(type: IngridientType.milk)
-  //    print("\(cofeMachineFromMainVC.milkPortion) water aded")
-  //    print("now level of milk is - \(cofeMachineFromMainVC.restoreUserDefaults(key: Constants.storedMilkLevel))")
-  //
-  //
-  //  }
-  //
-  //
-  //  @IBAction func addMilkButton(_ sender: UIButton) {
-  //    cofeMachineFromMainVC.makeService(type: IngridientType.milk)
-  //
-  //  }
-  //
-  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  //    //
-  //  }
-  
-  
-  
-  
-  
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+
+ 
 }

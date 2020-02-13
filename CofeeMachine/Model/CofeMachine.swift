@@ -10,11 +10,13 @@ import UIKit
 
 class CofeMachine: NSObject {
   
+  
   // MARK: - capacity of tanks
   let waterTankCapasity: Int
   let milkTankCapasity: Int
   let beansTankCapasity: Int
   let trashBinCapasity: Int
+  
   
   // MARK: - tankState
   private var newValueOfTankLevel: Int
@@ -23,6 +25,7 @@ class CofeMachine: NSObject {
   private var milkTankLevel: Int
   private var beansTankLevel: Int
   private var trashBinLevel: Int
+  
   
   // MARK: - portions
   var waterPortion: Int
@@ -52,6 +55,7 @@ class CofeMachine: NSObject {
     
   }
   
+  
   // MARK: - check level of tanks and trash bean
   func isEnoughIngridientsForProduct(drink: Drink) -> Bool {
     var result = false
@@ -66,8 +70,10 @@ class CofeMachine: NSObject {
     if trashBinCapasity > (trashBinLevel + drink.trash) {
       result = true
     }
+    
     return result
   }
+  
   
   // MARK: - Product Actions
   func makeDrink(drink: Drink) -> String {
@@ -83,6 +89,7 @@ class CofeMachine: NSObject {
         trashBinLevel += drink.trash
         trashBinLevel = saveUserDefaults(productLevel: trashBinLevel, key: Constants.storedTrashLevel)
         labelText = "\(drink.name) is ready \u{2615}"
+        increaseCupsCount()
         return labelText
       } else {
         labelText = "not enought ingridients"
@@ -92,6 +99,7 @@ class CofeMachine: NSObject {
     }
     return labelText
   }
+  
   
   // MARK: - Service Actions
   func initService(tankCapasity: Int, tankLevel: Int, portion: Int, ingridientType: IngridientType) -> (String) {
@@ -109,7 +117,6 @@ class CofeMachine: NSObject {
         labelText = "Water tank is full"
         return (labelText)
       }
-
     }
   }
   
@@ -142,6 +149,7 @@ class CofeMachine: NSObject {
     }
   }
   
+  
   // MARK: - User Defaults
   func saveUserDefaults(productLevel: Int, key: String) -> Int {
     UserDefaults.standard.set(productLevel, forKey: key)
@@ -150,6 +158,18 @@ class CofeMachine: NSObject {
   
   func restoreUserDefaults(key: String) -> Int {
     return UserDefaults.standard.integer(forKey: key)
+  }
+  
+  func increaseCupsCount() -> Int {
+    let value = UserDefaults.standard.integer(forKey: Constants.cupCount) + 1
+    UserDefaults.standard.setValue(value, forKey: Constants.cupCount)
+    return value
+  }
+  
+  func increaseRunCount() -> Int {
+    let value = UserDefaults.standard.integer(forKey: Constants.runCount) + 1
+    UserDefaults.standard.setValue(value, forKey: Constants.runCount)
+    return value
   }
   
 }

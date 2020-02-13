@@ -10,6 +10,7 @@
 		E604A3D823E3127600C46281 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604A3D723E3127600C46281 /* Constants.swift */; };
 		E60A731A23D6233A003AE53E /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60A731923D6233A003AE53E /* Drink.swift */; };
 		E611144223C8F22900F0234C /* CofeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611144123C8F22900F0234C /* CofeMachine.swift */; };
+		E63E8BDB23F57C6700748DE4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E8BDA23F57C6700748DE4 /* InfoViewController.swift */; };
 		E6699BB623DA5C0D00DB4461 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6699BB523DA5C0D00DB4461 /* Service.swift */; };
 		E6C797F723C7657E007A9AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C797F623C7657E007A9AA4 /* AppDelegate.swift */; };
 		E6C797F923C7657E007A9AA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C797F823C7657E007A9AA4 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 		E604A3D723E3127600C46281 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E60A731923D6233A003AE53E /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		E611144123C8F22900F0234C /* CofeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofeMachine.swift; sourceTree = "<group>"; };
+		E63E8BDA23F57C6700748DE4 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		E6699BB523DA5C0D00DB4461 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E6C797F323C7657E007A9AA4 /* CofeeMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CofeeMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C797F623C7657E007A9AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				E6C797FA23C7657E007A9AA4 /* MainViewController.swift */,
 				E6D4E2BF23E753F100CF4C52 /* ServiceViewController.swift */,
+				E63E8BDA23F57C6700748DE4 /* InfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				E60A731A23D6233A003AE53E /* Drink.swift in Sources */,
 				E6C797F723C7657E007A9AA4 /* AppDelegate.swift in Sources */,
 				E611144223C8F22900F0234C /* CofeMachine.swift in Sources */,
+				E63E8BDB23F57C6700748DE4 /* InfoViewController.swift in Sources */,
 				E604A3D823E3127600C46281 /* Constants.swift in Sources */,
 				E6C797F923C7657E007A9AA4 /* SceneDelegate.swift in Sources */,
 				E6D4E2C023E753F100CF4C52 /* ServiceViewController.swift in Sources */,

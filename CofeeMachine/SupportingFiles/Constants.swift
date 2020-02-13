@@ -10,6 +10,7 @@ import UIKit
 
 struct Constants {
   static let runCount = "runCount"
+  static let cupCount = "cupCount"
   
   static let storedWaterLevel = "waterLevel"
   static let storedMilkLevel = "milkLevel"

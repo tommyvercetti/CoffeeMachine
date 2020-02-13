@@ -11,14 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
   
   // MARK: - Outlets
-  @IBOutlet weak var runCounterLabel: UILabel!{
-    didSet{
-      runCounterLabel.text = "Run number \(increaseRunCount())"
-      
-    }
-  }
-  
-  @IBOutlet weak var ingridientsMonitorLabel: UILabel!{
+  @IBOutlet weak var ingridientsMonitorLabel: UILabel! {
     didSet{
       showLevelOfIngridients()
     }
@@ -27,7 +20,7 @@ class MainViewController: UIViewController {
   
   // MARK: - Init
   let firstMachine = CofeMachine(newValueOfTankLevel: 0,
-                                 waterTankCapasity: 2000, milkTankCapasity: 1500, beansTankCapasity: 2500, trashBinCapasity: 2500,
+                                 waterTankCapasity: 2000, milkTankCapasity: 1500, beansTankCapasity: 2500, trashBinCapasity: 250,
                                  waterTankLevel: UserDefaults.standard.integer(forKey: Constants.storedWaterLevel),
                                  milkTankLevel: UserDefaults.standard.integer(forKey: Constants.storedMilkLevel),
                                  beansTankLevel: UserDefaults.standard.integer(forKey: Constants.storedBeansLevel),
@@ -48,10 +41,10 @@ class MainViewController: UIViewController {
   func showLevelOfIngridients() {
     ingridientsMonitorLabel.text =
     """
-    Water tank - \(firstMachine.restoreUserDefaults(key: "waterLevel"))
-    Milk tank - \(firstMachine.restoreUserDefaults(key: "milkLevel"))
-    Beans tank - \(firstMachine.restoreUserDefaults(key: "beansLevel"))
-    Trash bin - \(firstMachine.restoreUserDefaults(key: "trashLevel"))
+    Water tank - \(firstMachine.restoreUserDefaults(key: Constants.storedWaterLevel))
+    Milk tank - \(firstMachine.restoreUserDefaults(key: Constants.storedMilkLevel))
+    Beans tank - \(firstMachine.restoreUserDefaults(key: Constants.storedBeansLevel))
+    Trash bin - \(firstMachine.restoreUserDefaults(key: Constants.storedTrashLevel))
     """
     ingridientsMonitorLabel.numberOfLines = 4
   }
@@ -61,23 +54,13 @@ class MainViewController: UIViewController {
   }
   
   
-  
   // MARK: - Product Actions
   @IBAction func makeCapuchinoButton() {
     ingridientsMonitorLabel.text = firstMachine.makeDrink(drink: Drink.capuchino())
-    
   }
   
   @IBAction func makeEspressoButton() {
     ingridientsMonitorLabel.text = firstMachine.makeDrink(drink: Drink.espresso())
-  }
-  
-  
-  // MARK: - UserDefaults
-  func increaseRunCount() -> Int {
-    let value = UserDefaults.standard.integer(forKey: Constants.runCount) + 1
-    UserDefaults.standard.setValue(value, forKey: Constants.runCount)
-    return value
   }
   
   
@@ -88,10 +71,11 @@ class MainViewController: UIViewController {
       serviceVC.cofeMachineFromMainVC = firstMachine
       serviceVC.callback = { result in
         self.showLevelOfIngridients()
-        print(result)
       }
     }
-    
-    
+    if let infoVC = segue.destination as? InfoViewController {
+      infoVC.cofeMachineFromMainVC = firstMachine
+    }
   }
+   
 }
