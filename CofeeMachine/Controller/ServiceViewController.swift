@@ -4,8 +4,6 @@
 //
 //  Created by Andrian Kryk on 02.02.2020.
 //  Copyright © 2020 Andrian Kryk. All rights reserved.
-//
-//создать в первой вьюхе в перпаре сегвей переменную, в котороую отсылать экземпляр первой кофе машины. а во втором вьюконтроллере шатать эту переменную
 
 import UIKit
 
@@ -20,6 +18,7 @@ class ServiceViewController: UIViewController {
       showLevelOfIngridients()
     }
   }
+  
   
   
   // MARK: - viewDidLoad

@@ -160,10 +160,10 @@ class CofeMachine: NSObject {
     return UserDefaults.standard.integer(forKey: key)
   }
   
-  func increaseCupsCount() -> Int {
+  func increaseCupsCount() {
     let value = UserDefaults.standard.integer(forKey: Constants.cupCount) + 1
     UserDefaults.standard.setValue(value, forKey: Constants.cupCount)
-    return value
+//    return value
   }
   
   func increaseRunCount() -> Int {
